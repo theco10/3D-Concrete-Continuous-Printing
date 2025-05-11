@@ -34,5 +34,5 @@ This approach **avoids unwanted extruding moves across wet concrete**, reduces d
 ### Command-Line Interface
 
 ```bash
-python gcode_concrete_post.py input.gcode output.gcode [--debug]
+python gcode-postprocessing.py input.gcode output.gcode [--debug]
 
