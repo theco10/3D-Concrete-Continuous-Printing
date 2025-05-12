@@ -31,8 +31,20 @@ This approach **avoids unwanted extruding moves across wet concrete**, reduces d
 
 ## Usage
 
+### Prerequisites
+
+To use this script correctly, follow these requirements:
+
+* **Slicer**: Use **PrusaSlicer** to generate your G-code.
+* **Perimeter-based G-code**: Ensure that **perimeters are enabled** in **Print Settings → Layers and Perimeters**. The script relies on perimeters being printed in a consistent order (typically from inside to outside).
+
+The script **expects that perimeter start points (joint points)** are aligned vertically from one layer to the next. This alignment ensures that the nozzle **remains at the same position when transitioning from one layer to the next**, avoiding unnecessary travel moves across the print — which is critical in continuous concrete extrusion where material flow cannot be stopped.
+
+> 📌 In PrusaSlicer, use the **"Seam position"** setting (e.g., "Aligned") to enforce consistent joint placement.
+
 ### Command-Line Interface
 
 ```bash
 python gcode-postprocessing.py input.gcode output.gcode [--debug]
+```
 
